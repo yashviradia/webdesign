@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Goethe Institut Deutschprüfung</title>
+    <link rel="stylesheet" href="surveyform.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 id="title" class="text-center">Anmeldung für die Prüfung</h1>
+        <p id="description" class="description text-center">
+          Bitte füllen Sie dieses Formular für die Anmeldung der Deutschprüfung aus!
+        </p>
+      </header>
+      <form id="survey-form">
+        <div class="form-group">
+          <label id="name-label" for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-control"
+            placeholder="Ihr Nachname"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="name-label" for="name">Vorname</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-control"
+            placeholder="Ihr Vorname"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="name-label" for="name">Handynummer</label>
+          <input
+            type="number"
+            name="number"
+            id="name"
+            class="form-control"
+            placeholder="Ihre Handynummer"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="email-label" for="email">E-Mail Addresse</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="Ihre E-Mail Addresse"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="name-label" for="name">Passnummer</label>
+          <input
+            type="text"
+            name="passnummer"
+            id="name"
+            class="form-control"
+            placeholder="Ihre Passnummer"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="number-label" for="number"
+            >Alter<span class="clue">(optional)</span></label
+          >
+          <input
+            type="number"
+            name="age"
+            id="number"
+            min="10"
+            max="99"
+            class="form-control"
+            placeholder="Alter"
+          />
+        </div>
+        <div class="form-group">
+          <p>Geschlecht</p>
+          <label>
+            <input
+              name="user-recommend"
+              value="männlich"
+              type="radio"
+              class="input-radio"
+              checked
+            />männlich</label
+          >
+          <label>
+            <input
+              name="user-recommend"
+              value="weiblich"
+              type="radio"
+              class="input-radio"
+            />weiblich</label>
+        </div>
+
+        <div class="form-group">
+          <p>
+            Wann möchten Sie die Prüfung machen?
+          </p>
+          <select id="dropdown" name="die Zeit" class="form-control" required>
+            <option disabled selected value>Bitte wählen Sie für die Zeit!</option>
+            <option value="vormittags">Vormittag</option>
+            <option value="mittags">Mittag</option>
+            <option value="nachmittags">Nachmittag</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <p>
+            An welcher Deutschprüfung möchten Sie teilnehmen?
+            <span class="clue">(Check all that apply)</span>
+          </p>
+
+          <label
+            ><input
+              name="prefer"
+              value="Goethe Zertifikat A1"
+              type="checkbox"
+              class="input-checkbox"
+            />Goethe Zertifikat A1</label
+          >
+          <label>
+            <input
+              name="prefer"
+              value="Goethe Zertifikat A2"
+              type="checkbox"
+              class="input-checkbox"
+            />Goethe Zertifikat A2</label
+            >
+          <label>
+            <input
+              name="prefer"
+              value="Goethe Zertifikat B1"
+              type="checkbox"
+              class="input-checkbox"
+            />Goethe Zertifikat B1</label
+          >
+          <label
+            ><input
+              name="prefer"
+              value="Goethe Zertifikat B2"
+              type="checkbox"
+              class="input-checkbox"
+            />Goethe Zertifikat B2</label
+          >
+          <label
+            ><input
+              name="prefer"
+              value="Goethe Zertifikat C1"
+              type="checkbox"
+              class="input-checkbox"
+            />Goethe Zertifikat C1</label
+          >
+          <label
+            ><input
+              name="prefer"
+              value="Goethe Zertifikat C2-GDS"
+              type="checkbox"
+              class="input-checkbox"
+            />Goethe Zertifikat C2-GDS</label
+          >
+          <label
+            ><input
+              name="prefer"
+              value="TestDaF"
+              type="checkbox"
+              class="input-checkbox"
+            />TestDaF</label
+          >
+        </div>
+        <div class="form-group">
+          <p>Bitte schreiben Sie hier Ihre Addresse!</p>
+          <textarea
+            id="comments"
+            class="input-textarea"
+            name="comment"
+            placeholder="Ihre Addresse"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" id="submit" class="submit-button">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
