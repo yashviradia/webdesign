@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Documentation Python</title>
+    <link rel="stylesheet" href="documentation_python.css">
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Python Documentation</header>
+      <ul>
+        <li><a class="nav-link" href="#die_Entwicklungsgeschichte">die Entwicklungsgeschichte</a></li>
+        <li><a class="nav-link" href="#die_Einführung">die Einführung</a></li>
+        <li>
+          <a class="nav-link" href="#Was_sollen_Sie_schon_wissen?"
+            >Was sollen Sie schon wissen?</a
+          >
+        </li>
+        <li><a class="nav-link" href="#Standardbibliothek">Standardbibliothek</a></li>
+        <li><a class="nav-link" href="#Ausnahmebehandlung">Ausnahmebehandlung</a></li>
+        <li><a class="nav-link" href="#Hallo,_Welt!">Hallo, Welt!</a></li>
+        <li><a class="nav-link" href="#Variablen">Variablen</a></li>
+        <li><a class="nav-link" href="#Variable_Anwendungsbereich">Variable Anwendungsbereich</a></li>
+        <li><a class="nav-link" href="#Sammeltypen">Sammeltypen</a></li>
+        <li><a class="nav-link" href="#Objektsystem">Objektsystem</a></li>
+        <li><a class="nav-link" href="#Datentypen_und_Strukturen">Datentypen und Strukturen</a></li>
+        <li>
+          <a class="nav-link" href="#Syntax">Syntax</a>
+        </li>
+        <li><a class="nav-link" href="#Strukturierung_durch_Einrücken">Strukturierung durch Einrücken</a></li>
+        <li><a class="nav-link" href="#Verbreitung_und_Einsatz">Verbreitung und Einsatz</a></li>
+        <li><a class="nav-link" href="#Hinweis">Hinweis</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="die_Entwicklungsgeschichte">
+        <header>die Entwicklungsgeschichte</header>
+        <article>
+          <p>
+            Die Sprache wurde Anfang der 1990er Jahre von Guido van Rossum am Centrum Wiskunde & Informatica in Amsterdam als Nachfolger für die Programmier-Lehrsprache ABC entwickelt und war ursprünglich für das verteilte Betriebssystem Amoeba gedacht.
+          </p>
+
+          <p>
+            Der Name geht nicht (wie das Logo vermuten ließe) auf die gleichnamige Schlangengattung (Pythons) zurück, sondern bezog sich ursprünglich auf die englische Komikertruppe Monty Python. In der Dokumentation finden sich daher auch einige Anspielungen auf Sketche aus dem Flying Circus.[15] Trotzdem etablierte sich die Assoziation zur Schlange, was sich unter anderem in der Programmiersprache Cobra[16] sowie dem Python-Toolkit „Boa“[17] äußert. Die erste Vollversion erschien im Januar 1994 unter der Bezeichnung Python 1.0. Gegenüber früheren Versionen wurden einige Konzepte der funktionalen Programmierung implementiert, die allerdings später wieder aufgegeben wurden.[18] Von 1995 bis 2000 erschienen neue Versionen, die fortlaufend als Python 1.1, 1.2 etc. bezeichnet wurden.
+          </p>
+
+          <p>
+            Python 2.0 erschien am 16. Oktober 2000. Neue Funktionen umfassten eine voll funktionsfähige Garbage Collection (automatische Speicherbereinigung) und die Unterstützung für den Unicode-Zeichensatz.[19] In Version 2.6 wurde eine Hilfe eingebaut, mit der angezeigt werden kann, welche Code-Sequenzen vom Nachfolger Python 3 nicht mehr unterstützt werden und daher in darauf aufbauenden Versionen nicht mehr lauffähig sind.[20]
+          </p>
+
+          <p>
+            Python 3.0 (auch Python 3000) erschien am 3. Dezember 2008 nach längerer Entwicklungszeit. Es beinhaltet einige tiefgreifende Änderungen an der Sprache, etwa das Entfernen von Redundanzen bei Befehlssätzen und veralteten Konstrukten. Da Python 3.0 hierdurch teilweise inkompatibel zu früheren Versionen ist,[21] beschloss die Python Software Foundation, Python 2.7 parallel zu Python 3 bis Ende 2019 weiter mit neuen Versionen zu unterstützen (für Hinweise zu noch erscheinenden 2er-Versionen, dem Supportende und Hilfe zur Migration siehe Abschnitt Ende von Python 2).
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="die_Einführung">
+        <header>die Einführung</header>
+        <article>
+          <p>
+            Python wurde mit dem Ziel größter Einfachheit und Übersichtlichkeit entworfen. Dies wird vor allem durch zwei Maßnahmen erreicht. Zum einen kommt die Sprache mit relativ wenigen Schlüsselwörtern aus.[22] Zum anderen ist die Syntax reduziert und auf Übersichtlichkeit optimiert. Dadurch lassen sich Python-basierte Skripte deutlich knapper formulieren als in anderen Sprachen.[23]
+          </p>
+          <p>
+            Van Rossum legte bei der Entwicklung großen Wert auf eine Standardbibliothek, die überschaubar und leicht erweiterbar ist. Dies war Ergebnis seiner schlechten Erfahrung mit der Sprache ABC, in der das Gegenteil der Fall ist.[24] Durch dieses Konzept wurde es auch ermöglicht, Python-Programme in anderen Sprachen als Module einzubetten, um z. B. Schwächen von Python zu umgehen. Beispielsweise können für zeitkritische Teile Routinen in maschinennäheren Sprachen wie z. B. C aufgerufen werden.[25] Umgekehrt lassen sich mit Python Module und Plug-ins für andere Programme schreiben, die die entsprechende Unterstützung bieten. Dies ist z. B. bei Blender, Cinema 4D, GIMP, Maya, OpenOffice bzw. LibreOffice, PyMOL, SPSS, QGIS oder KiCad der Fall.
+          </p>
+          <p>
+            Python ist eine Multiparadigmensprache. Das bedeutet, Python zwingt den Programmierer nicht zu einem einzigen Programmierstil, sondern erlaubt, das für die jeweilige Aufgabe am besten geeignete Paradigma zu wählen. Objektorientierte und strukturierte Programmierung werden vollständig unterstützt, funktionale und aspektorientierte Programmierung werden durch einzelne Elemente der Sprache unterstützt. Die Datentypen werden dynamisch verwaltet, eine statische Typprüfung wie z. B. bei C++ gibt es nicht. Die Freigabe nicht mehr benutzter Speicherbereiche erfolgt durch Referenzzählung.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Was_sollen_Sie_schon_wissen?">
+        <header>Was sollen Sie schon wissen?</header>
+        <article>
+          ganz und gar nicht. Wenn Sie neu sind, dann Wilkommen!
+        </article>
+      </section>
+      <section class="main-section" id="Standardbibliothek">
+        <header>Standardbibliothek</header>
+        <article>
+          <p>
+            Die mächtige Standardbibliothek ist eine der größten Stärken von Python, wodurch es sich für viele Anwendungen eignet. Der überwiegende Teil davon ist plattformunabhängig, so dass auch größere Python-Programme oft auf Unix, Windows, macOS und anderen Plattformen ohne Änderung laufen. Die Module der Standardbibliothek können mit in C oder Python selbst geschriebenen Modulen ergänzt werden.
+          </p>
+          <p>
+            Die Standardbibliothek ist besonders auf Internetanwendungen zugeschnitten, mit der Unterstützung einer großen Anzahl von Standardformaten und -protokollen (wie MIME und HTTP). Module zur Schaffung grafischer Benutzeroberflächen, zur Verbindung mit relationalen Datenbanken und zur Manipulation regulärer Ausdrücke sind ebenfalls enthalten
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Ausnahmebehandlung">
+        <header>Ausnahmebehandlung</header>
+        <article>
+          <p>
+            Python nutzt ausgiebig die Ausnahmebehandlung (englisch exception handling) als ein Mittel, um Fehlerbedingungen zu testen. Dies ist so weit in Python integriert, dass es teilweise sogar möglich ist, Syntaxfehler abzufangen und zur Laufzeit zu behandeln.
+
+            Ausnahmen haben einige Vorteile gegenüber anderen beim Programmieren üblichen Verfahren der Fehlerbehandlung (wie z. B. Fehler-Rückgabewerte und globale Statusvariablen). Sie sind Thread-sicher und können leicht bis in die höchste Programmebene weitergegeben oder an einer beliebigen anderen Ebene der Funktionsaufruffolge behandelt werden. Der korrekte Einsatz von Ausnahmebehandlungen beim Zugriff auf dynamische Ressourcen erleichtert es zudem, bestimmte auf Race Conditions basierende Sicherheitslücken zu vermeiden, die entstehen können, wenn Zugriffe auf bereits veralteten Statusabfragen basieren.
+
+            Der Python-Ansatz legt den Einsatz von Ausnahmen nahe, wann immer eine Fehlerbedingung entstehen könnte. Nützlich ist dieses Prinzip beispielsweise bei der Konstruktion robuster Eingabeaufforderungen:
+          <code>
+            while True:
+                num = input("Eine ganze Zahl eingeben: ")
+
+                try:
+                    num = int(num)
+                except ValueError:
+                    print("Eine _Zahl_, bitte!")
+                else:
+                    break
+            </code>
+            Dieses Programmstück fragt den Benutzer so lange nach einer Zahl, bis dieser eine Zeichenfolge eingibt, die sich per int() in eine Ganzzahl konvertieren lässt. Durch die Ausnahmebehandlung wird hier vermieden, dass eine Fehleingabe zu einem Laufzeitfehler führt, der das Programm zum Abbruch zwingt.
+
+            Ebenso kann auch das hier nicht berücksichtigte Interrupt-Signal (SIGINT, häufig Strg+C) mittels Ausnahmebehandlung in Python abgefangen und behandelt werden (except KeyboardInterrupt: …).
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Hallo,_Welt!">
+        <header>Hallo, Welt!</header>
+        <article>
+          Um mit dem Schreiben von Python zu beginnen, öffnen Sie das Scratchpad und schreiben Sie Ihr
+          erster "Hallo Welt" Python-Code:
+          <code>
+            print("Hallo, Welt!")
+          </code>
+          Hurray! Sie haben das geschafft! Jetzt lesen Sie weiter.
+        </article>
+      </section>
+      <section class="main-section" id="Variablen">
+        <header>Variablen</header>
+        <ul>
+          <li>
+            <p>
+              Es ist ganz einfach, ein Variable zu deklarieren. x, y, z usw. sind Variablen.
+            </p>
+          </li>
+        </ul>
+      </section>
+      <section class="main-section" id="Variable_Anwendungsbereich">
+        <header>Variable Anwendungsbereich</header>
+        <article>
+          <ul>
+            <li>
+              <p>
+                Wenn Sie eine Variable außerhalb einer Funktion deklarieren, wird sie als globale Variable bezeichnet, da sie für jeden anderen Code im aktuellen Dokument verfügbar ist. Wenn Sie eine Variable innerhalb einer Funktion deklarieren, wird sie als lokale Variable bezeichnet, da sie nur innerhalb dieser Funktion verfügbar ist.
+              </p>
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="Sammeltypen">
+        <header>Sammeltypen</header>
+        <article>
+          <p>
+            Python besitzt mehrere Sammeltypen, darunter Listen, Tupel, Mengen (Sets) und assoziative Arrays (Dictionaries). Listen, Tupel und Zeichenketten sind Folgen (Sequenzen, Felder) und kennen fast alle die gleichen Methoden: Über die Zeichen einer Kette kann man ebenso iterieren wie über die Elemente einer Liste. Außerdem gibt es die unveränderlichen Objekte, die nach ihrer Erzeugung nicht mehr geändert werden können. Listen sind z. B. erweiterbare Felder, wohingegen Tupel und Zeichenketten eine feste Länge haben und unveränderlich sind.
+          </p>
+          <ul>
+            <li>
+              <p>
+                Der Zweck solcher Unveränderlichkeit hängt z. B. mit den Wörterbüchern zusammen, einem Datentyp, der auch als assoziatives Array bezeichnet wird. Um die Datenkonsistenz zu sichern, müssen die Schlüssel eines Wörterbuches vom Typ „unveränderlich“ sein. Die ins Wörterbuch eingetragenen Werte können dagegen von beliebigem Typ sein.
+              </p>
+              <p>
+                Sets sind Mengen von Objekten und in CPython ab Version 2.4 im Standardsprachumfang enthalten. Diese Datenstruktur kann beliebige (paarweise unterschiedliche) Objekte aufnehmen und stellt Mengenoperationen wie beispielsweise Durchschnitt, Differenz und Vereinigung zur Verfügung.
+              </p>
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="Objektsystem">
+        <header>Objektsystem</header>
+        <article>
+          <ul>
+            <li>
+              <p>
+                Das Typsystem von Python ist auf das Klassensystem abgestimmt. Obwohl die eingebauten Datentypen genau genommen keine Klassen sind, können Klassen von einem Typ erben. So kann man die Eigenschaften von Zeichenketten oder Wörterbüchern erweitern – auch von Ganzzahlen. Python unterstützt Mehrfachvererbung.
+              </p>
+            </li>
+            <li>
+              <p>
+                Die Sprache unterstützt direkt den Umgang mit Typen und Klassen. Typen können ausgelesen (ermittelt) und verglichen werden und verhalten sich wie Objekte – tatsächlich sind die Typen (wie in Smalltalk) selbst ein Objekt. Die Attribute eines Objektes können als Wörterbuch extrahiert werden.
+              </p>
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="Datentypen_und_Strukturen">
+        <header>Datentypen und Strukturen</header>
+        <article>
+          <p>
+            Python besitzt eine größere Anzahl von grundlegenden Datentypen. Neben der herkömmlichen Arithmetik unterstützt es transparent auch beliebig große Ganzzahlen und komplexe Zahlen.
+
+            Die üblichen Zeichenkettenoperationen werden unterstützt. Zeichenketten sind in Python allerdings unveränderliche Objekte (wie auch in Java). Daher geben Operationen, die eine Zeichenkette verändern sollen – wie z. B. durch Ersetzen von Zeichen – immer eine neue Zeichenkette zurück.
+
+            In Python ist alles ein Objekt: Klassen, Typen, Methoden, Module etc. Der Datentyp ist jeweils an das Objekt (den Wert) gebunden und nicht an eine Variable, d. h. Datentypen werden dynamisch vergeben, so wie bei Smalltalk oder Lisp – und nicht wie bei Java.
+
+            Trotz der dynamischen Typverwaltung enthält Python eine gewisse Typprüfung. Diese ist strenger als bei Perl, aber weniger strikt als etwa bei Objective CAML. Implizite Umwandlungen nach dem Duck-Typing-Prinzip sind unter anderem für numerische Typen definiert, so dass man beispielsweise eine komplexe Zahl mit einer langen Ganzzahl ohne explizite Typumwandlung multiplizieren kann.
+
+            Mit dem Format-Operator % gibt es eine implizite Umwandlung eines Objekts in eine Zeichenkette. Der Operator == überprüft zwei Objekte auf (Wert-)Gleichheit. Der Operator is überprüft die tatsächliche Identität zweier Objekte.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Syntax">
+        <header>Syntax</header>
+        <article>
+          Eines der Entwurfsziele für Python war die gute Lesbarkeit des Quellcodes. Die Anweisungen benutzen häufig englische Schlüsselwörter, wo andere Sprachen Symbole einsetzen. Darüber hinaus besitzt Python weniger syntaktische Konstruktionen als viele andere strukturierte Sprachen, wie C, Perl oder Pascal:
+
+          zwei Schleifenformen
+          for zur Iteration über die Elemente einer Sequenz
+          while zur Wiederholung einer Schleife, solange ein logischer Ausdruck wahr ist.
+          Verzweigungen
+          <code>if … elif … else</code> für Verzweigungen
+          Beim letzten Punkt bieten andere Programmiersprachen zusätzlich switch und/oder goto. Diese wurden zugunsten der Lesbarkeit in Python weggelassen und müssen durch if-Konstrukte oder andere Verzweigungsmöglichkeiten (Slices, Wörterbücher) abgebildet werden. Im Gegensatz zu vielen anderen Sprachen können for- und while-Schleifen einen else-Zweig haben. Dieser wird nur ausgeführt, wenn die Schleife vollständig durchlaufen wurde und nicht mittels break abgebrochen wird.
+        </article>
+      </section>
+      <section class="main-section" id="Strukturierung_durch_Einrücken">
+        <header>Strukturierung durch Einrücken</header>
+        <article>
+          <p>
+            Python benutzt wie Miranda und Haskell Einrückungen als Strukturierungselement. Diese Idee wurde erstmals von Peter J. Landin vorgeschlagen und von ihm off-side rule („Abseitsregel“) genannt. In den meisten anderen Programmiersprachen werden Blöcke durch Klammern oder Schlüsselwörter markiert, während unterschiedlich große Leerräume außerhalb von Zeichenketten keine spezielle Semantik tragen. Bei diesen Sprachen ist die Einrückung zur optischen Hervorhebung eines Blockes zwar erlaubt und in der Regel auch erwünscht, aber nicht vorgeschrieben. Für Programmierneulinge wird der Zwang zu lesbarem Stil aber als Vorteil gesehen.
+          </p>
+          <ul>
+            <li>
+              <p>
+                Hierzu als Beispiel die Berechnung der Fakultät einer Ganzzahl, einmal in C und einmal in Python:
+
+                Fakultätsfunktion in C:
+              </p>
+              <code>
+                int factorial(int x) {
+                    if (x <= 1)
+                        return 1;
+
+                    return x * factorial(x - 1);
+                }
+              </code>
+            </li>
+            <li>
+              <p>
+                Die gleiche Funktion in Python:
+              </p>
+              <code>
+                def factorial(x):
+                    if x <= 1:
+                        return 1
+
+                    return x * factorial(x - 1)
+              </code>
+            </li>
+            <li>
+              <p>
+                Es ist jedoch darauf zu achten, die Einrückungen im gesamten Programmtext gleich zu gestalten. Die gemischte Verwendung von Leerzeichen und Tabulatorzeichen kann zu Problemen führen, da der Python-Interpreter Tabulatoren im Abstand von acht Leerzeichen annimmt. Je nach Konfiguration des Editors können Tabulatoren optisch mit weniger als acht Leerzeichen dargestellt werden, was zu Syntaxfehlern oder ungewollter Programmstrukturierung führen kann. Als vorbeugende Maßnahme kann man den Editor Tabulatorzeichen durch eine feste Anzahl von Leerzeichen ersetzen lassen. Die Python-Distribution enthält in der Standardbibliothek das Modul tabnanny, welches die Vermischung von Tabulator- und Leerzeichen zu erkennen und beheben hilft.
+              </p>
+              <p>
+                Man kann die Fakultätsfunktion aber auch wie in C einzeilig mit ternärem Operator formulieren:
+              </p>
+              <p>
+                Die Fakultätsfunktion in C:
+              </p>
+              <code>
+                int factorial(int x) {
+                    return x <= 1 ? 1 : x * factorial(x - 1);
+                }
+                Die Fakultätsfunktion in Python:
+
+                def factorial(x):
+                  return 1 if x <= 1 else x * factorial(x - 1)
+              </code>
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="Verbreitung_und_Einsatz">
+        <header>Verbreitung und Einsatz</header>
+        <article>
+          <p>
+            Python ist für die meisten gängigen Betriebssysteme frei erhältlich und bei den meisten Linux-Distributionen im Standardumfang enthalten. Um Python in Webserver einzubinden, wird Webserver-umgreifend WSGI verwendet, welches die Nachteile von CGI umgeht. WSGI stellt eine universelle Schnittstelle zwischen Webserver und Python(-Framework) zur Verfügung.
+          </p>
+          <p>
+            Eine Reihe von Web-Application-Frameworks nutzt Python, darunter Django, Pylons, SQLAlchemy, TurboGears, web2py, Flask und Zope. Ferner gibt es einen Python-Interpreter für das Symbian-Betriebssystem, so dass Python auf verschiedenen Mobiltelefonen verfügbar ist. In der Version 2.5.1 ist Python ein Bestandteil von AmigaOS 4.0. Außerdem basieren mehrere bekannte kommerzielle Projekte, etwa Google und YouTube, in Teilen auf Python.[30] Auch in der Spieleindustrie findet die Sprache bisweilen Einsatz, etwa in EVE Online, World in Conflict und Civilization IV.
+          </p>
+          <p>
+            Im Rahmen des Projektes 100-Dollar-Laptop wird Python als Standardsprache der Benutzeroberfläche verwendet. Da der 100-Dollar-Rechner für die Schulausbildung von Kindern konzipiert ist, soll bei Benutzung der dafür gestalteten grafischen Benutzeroberfläche „Sugar“ auf Knopfdruck der gerade laufende Python-Quellcode angezeigt werden.[31] Damit soll Kindern die Möglichkeit gegeben werden, die dahinter liegende Informationstechnik real zu erleben und nach Belieben „hinter die Kulissen“ zu schauen.
+          </p>
+          <p>
+            Der Einplatinen-Computer Raspberry Pi (Python Interpreter) sollte ursprünglich mit einem im ROM integrierten Python-Interpreter ausgeliefert werden.[32] Auch heute ist Python eine der bevorzugtesten Sprachen für den Raspberry Pi. Sein Standard-Betriebssystem Raspbian kommt mit einer großen Python-Bibliothek zur Ansteuerung der Hardware.
+
+            In der Wissenschaftsgemeinde genießt Python große Verbreitung, hauptsächlich wegen des einfachen Einstiegs in die Programmierung und der großen Auswahl wissenschaftlicher Bibliotheken. Numerische Rechnungen und die visuelle Aufbereitung der Ergebnisse in Graphen werden meist mit NumPy und der Matplotlib erledigt. Anaconda und SciPy bündeln viele wissenschaftliche Python-Bibliotheken und machen sie somit einfacher zugänglich. Mit TensorFlow, Keras, Scikit-learn, PyTorch u. a. gibt es große Bibliotheken zur Forschung und Nutzung von maschinellem Lernen und Deep Learning (Künstliche Intelligenz).
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Hinweis">
+        <header>Hinweis</header>
+        <article>
+          <ul>
+            <li>
+              die gesamte Dokumentation auf dieser Seite stammt aus
+              <a
+                href="https://de.wikipedia.org/wiki/Python_(Programmiersprache)"
+                target="_blank"
+                >Wikipedia Python</a
+              >
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
